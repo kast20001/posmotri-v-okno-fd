@@ -42,6 +42,7 @@ ol {
 }
 
 .page {
+  font-family: "Fira Sans Condensed", sans-serif;
   display: flex;
   inline-size: 1200px;
   block-size: 100%;
@@ -60,19 +61,61 @@ ol {
   text-align: center;
 }
 
+.content-list {
+  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-transform: uppercase;
+}
+
+.content__list-item {
+  margin-bottom: 30px;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
+}
+
 .result {
   padding-top: 75px; /* Потом сверить */
   max-width: 771px;
   gap: 16px;
 }
 
+.result__video-container {
+  margin-bottom: 26px;
+  width: 711px; /* Иначе не поставить(потом подумать над альтернативой, а то точный размер = -адаптив) */
+} 
+
+.result__video {
+  width: 100%; /* Занимает всю ширину контейнера */
+  height: 100%; /* Занимает всю высоту контейнера */
+  object-fit: cover;
+}
+
+
 .content__details {
-  margin-left: 16px;   /* Потом сверить (когда-нибудь) */
+  margin-left: 25px;   /* Потом сверить (когда-нибудь) */
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;   /* Отступы между заголовком и блоком с карточками */
+}
+
+.title {
+  font-size: 75px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  line-height: 94%; /* путь проценты работают...*/
+  font-weight: 700;
+  text-align: left;
+}
+
+.content__accent {
+  color: grey;
 }
 
 
@@ -84,19 +127,45 @@ ol {
   border: none;
 }
 
+
 .content__list-container {
   height: 534px;    /* Жёсткая высота */
   overflow-y: auto;    /* Вертикальный скролл при переполнении */
   overflow-x: hidden;  /* Горизонтальный скролл отключён */
 }
 
-.title {
-  font-family: "Oswald";
-  font-size: 75px;
-  text-transform: uppercase;
-  line-height: 70px;
-  font-weight: 700;
+.cards-list-item-template {
+  gap: 30px;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start; /* Прижимаем элементы к верху */
+}
+
+.content__video-card-thumbnail {
+  min-width: 194px; /* Минимальная ширина */
+  height: 103px; /* Фиксированная высота */
+  object-fit: cover; /* Обрезает избыточное пространство, сохраняя пропорции */
+  object-position: left; /* Центрирует изображение */
+}
+
+.content__video-card-title {
   text-align: left;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.content__video-card-description {
+  align-items: flex-start; /* Прижимаем элементы к верху */
+  font-size: 18px;
+  text-align: left;
+  letter-spacing: 0px;
+  line-height: 16.2px;
+  top: 0;
 }
 
 /* Потом перенести в подходящее место */
