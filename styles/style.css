@@ -42,13 +42,12 @@ ol {
 }
 
 .page {
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: "Oswald", sans-serif;
   display: flex;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -60,6 +59,7 @@ ol {
   flex-direction: row;
   text-align: center;
 }
+
 
 .content-list {
   gap: 30px;
@@ -79,14 +79,14 @@ ol {
 }
 
 .result {
-  padding-top: 75px; /* Потом сверить */
+  padding-top: 75px; /* Сврено*/
   max-width: 771px;
-  gap: 16px;
 }
 
 .result__video-container {
-  margin-bottom: 26px;
+  padding-right: 6px;
   width: 711px; /* Иначе не поставить(потом подумать над альтернативой, а то точный размер = -адаптив) */
+  height: 386px;
 } 
 
 .result__video {
@@ -99,7 +99,7 @@ ol {
 .content__details {
   margin-left: 25px;   /* Потом сверить (когда-нибудь) */
   width: 100%;
-  height: 100%;
+  height: 534px;
   display: flex;
   flex-direction: column;
   gap: 16px;   /* Отступы между заголовком и блоком с карточками */
@@ -120,6 +120,8 @@ ol {
 
 
 .search-form {
+  margin-right: 6px;
+  padding-top: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-between; /* распределяем элементы */
@@ -128,7 +130,53 @@ ol {
 }
 
 
+.search-form__label {
+  margin-left: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  gap: 5px;
+}
+
+.search-form__textfield::placeholder { /* + к знаниям */
+  font-family: 'Fira Sans Condensed', sans-serif; /* + если задать в самой форме, то ее длина ломается */
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-form__textfield { 
+  appearance: none;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 18px;
+  border-style: solid none;
+  border-color: #fff;
+  background-color: transparent;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 10px;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-weight: 400;
+  text-align: left;
+}
+
+
 .content__list-container {
+  margin-left: 3px;
+  margin-top: 8px;
   height: 534px;    /* Жёсткая высота */
   overflow-y: auto;    /* Вертикальный скролл при переполнении */
   overflow-x: hidden;  /* Горизонтальный скролл отключён */
@@ -147,7 +195,11 @@ ol {
   min-width: 194px; /* Минимальная ширина */
   height: 103px; /* Фиксированная высота */
   object-fit: cover; /* Обрезает избыточное пространство, сохраняя пропорции */
-  object-position: left; /* Центрирует изображение */
+  object-position: left; /* ДУМАТЬ */
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
 }
 
 .content__video-card-title {
@@ -157,15 +209,51 @@ ol {
   font-weight: 700;
   font-size: 30px;
   line-height: 30px;
+  white-space: nowrap;       /* Запрещаем перенос */
+  overflow: hidden;          /* Скрываем переполняющий текст */
+  text-overflow: ellipsis;   /* Добавляем "…" при обрезке */
 }
 
-.content__video-card-description {
+
+.content__video-card-description { 
+  padding-top: 3px; /* Паддинги придумал Сатана... Он не встает ровно:( */
+  font-family: 'Fira Sans Condensed', sans-serif;
   align-items: flex-start; /* Прижимаем элементы к верху */
   font-size: 18px;
+  font-weight: 400;
   text-align: left;
   letter-spacing: 0px;
   line-height: 16.2px;
-  top: 0;
+  display: -webkit-box;      /* Необходимо для line-clamp, если верить стаковерфлоу */
+  overflow: hidden;          /* Скрываем переполняющий текст */
+  -webkit-line-clamp: 1;     /* Ограничиваем двумя строкамами для глобала*/
+  -webkit-box-orient: vertical; /* Ориентация обрезки */
+  line-clamp: 1; 
+  white-space: nowrap;       /* То же, что и для заголовка */
+  text-overflow: ellipsis;   /* Добавляем "…" при обрезке */
+} 
+/* ПОЧЕМУ ПОСЛЕ ЗАПРЕТА ПЕРЕНОСА ТЕКСТ РЕЗКО ВСТАЛ ВЕРНО */
+
+.button {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color:#fff;
+  text-align: center;
+  border: 1px solid #fff;
+  background-color: transparent;
+}
+
+.search-form__submit-button {
+  margin-top: 18px;
+  width: 194px; /* В макете указано, что фиксировано, поэтому, наверное, можно? */
+  height: 34px; /* Мб высоту в общий класс лучше было бы */
+  align-items: flex-start;
+}
+
+.more-button {
+  width: 100%;
+  min-height: 34px;
 }
 
 /* Потом перенести в подходящее место */
