@@ -71,17 +71,39 @@ ol {
 
 .content__list-item {
   margin-bottom: 30px;
+  padding-right: 3px;
+  padding-left: 3px;
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: #fff;
 }
 
 .content__card-link_current {
+  background-color: #1B1919;
+}
+
+.content__card-link:active {
   background-color: #545050;
 }
 
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: #fff;
+}
+
+.content__card-link:focus {
+    outline: none;
+}
+
+/* Показываем обводку только при фокусе с клавиатуры */
+.content__card-link:focus-visible {
+    outline: 1px solid white;
+    border-radius: 0px; 
+}
 
 .result {
   padding-top: 75px; /* Сврено*/
@@ -169,9 +191,6 @@ ol {
   display: flex;
   gap: 10px;
 }
-
-
-
 
 /* Состояния чекбокса */ 
 .search-form__label:hover .search-form__label-text {
