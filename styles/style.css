@@ -78,6 +78,11 @@ ol {
   color: #fff;
 }
 
+.content__card-link_current {
+  background-color: #545050;
+}
+
+
 .result {
   padding-top: 75px; /* Сврено*/
   max-width: 771px;
@@ -166,17 +171,26 @@ ol {
 }
 
 
+
+
 /* Состояния чекбокса */ 
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
+.search-form__label:has(.search-form__checkbox:focus-visible) {
+  outline: 1px solid white;
+  outline-offset: 1px;
+  border-radius: 0px;
+}
+
 .search-form__label:focus-visible {
   outline: 1px solid white; /* Белая обводка вокруг всего лейбла */
-  outline-offset: 3px;
-  border-radius: 0px; 
+  outline-offset: 1px;
+  border-radius: 0px; /* Почему-то не работает */
 }
+
 
 .search-form__pseudo-checkbox {
   appearance: none;
@@ -202,11 +216,11 @@ ol {
 }
 
 .search-form__fieldset {
+  font-family: 'Fira Sans Condensed', sans-serif;
   border: none;
 }
 
 .search-form__fieldset-title {
-  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 0px;
@@ -244,6 +258,7 @@ ol {
 }
 
 .content__video-card-title {
+  max-width: 196px;
   text-align: left;
   letter-spacing: 0px;
   text-transform: uppercase;
