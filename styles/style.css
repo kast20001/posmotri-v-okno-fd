@@ -111,7 +111,7 @@ ol {
 .result__video-container {
   width: 711px; /* Иначе не поставить(потом подумать над альтернативой, а то точный размер = -адаптив) */
   height: 386px;
-  position: relative;
+  position: relative; /* Для прелоудера */
 } 
 
 .result__video {
@@ -119,7 +119,6 @@ ol {
   height: 100%; /* Занимает всю высоту контейнера */
   object-fit: cover;
 }
-
 
 .content__details {
   margin-left: 25px;   /* Потом сверить (когда-нибудь) */
@@ -184,9 +183,9 @@ ol {
 }
 
 /* ПОФИКСИТЬ */
-.search-form:has(.search-form__input:focus-visible) { /* + ваши факультативные шаги меня убьют...*/
+.search-form:has(.search-form__input:focus-visible) { /* + факультативные шаги убивают...*/
   outline: 1px solid white; /* Белая обводка вокруг всего лейбла */
-  outline-offset: 2px;
+  outline-offset: 2px; /* Чтобы не сливалось в обводкой */
   border-radius: 0px; 
 }
 
@@ -258,7 +257,7 @@ ol {
   height: 534px;    /* Жёсткая высота */
   overflow-y: auto;    /* Вертикальный скролл при переполнении */
   overflow-x: hidden;  /* Горизонтальный скролл отключён */
-  position: relative;
+  position: relative; /* Для прелоудера */
 }
 
 .cards-list-item-template {
@@ -315,7 +314,7 @@ ol {
 } 
 /* ПОСЛЕ ЗАПРЕТА ПЕРЕНОСА ТЕКСТ РЕЗКО ВСТАЛ ВЕРНО(не дышать на него) */
 
-.button {
+.button {  /* Общий класс для кнопок */
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -326,7 +325,7 @@ ol {
   cursor: pointer;
 }
 
-.search-form__submit-button {
+.search-form__submit-button {  /* Частный вариант для сабмит кнопки */
   margin-left: 0px;
   margin-top: 18px;
   width: 194px; /* В макете указано, что фиксировано, поэтому, наверное, можно? */
@@ -355,7 +354,6 @@ ol {
   min-height: 34px;
 }
 
-/* Потом перенести в подходящее место */
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
