@@ -61,16 +61,15 @@ ol {
 }
 
 
-.content-list {
+.content__list {
   gap: 30px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   text-transform: uppercase;
 }
 
 .content__list-item {
-  margin-bottom: 30px;
+  width: 390px;
   padding-right: 3px;
   padding-left: 3px;
 }
@@ -79,6 +78,7 @@ ol {
   display: block;
   text-decoration: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .content__card-link_current {
@@ -91,8 +91,6 @@ ol {
 
 .content__card-link:hover {
   text-decoration: underline;
-  text-underline-offset: 3px;
-  color: #fff;
 }
 
 .content__card-link:focus {
@@ -106,14 +104,14 @@ ol {
 }
 
 .result {
-  padding-top: 75px; /* Сврено*/
-  max-width: 771px;
+  padding-top: 75px; /* Сверено*/
+  max-width: 711px;
 }
 
 .result__video-container {
-  padding-right: 6px;
   width: 711px; /* Иначе не поставить(потом подумать над альтернативой, а то точный размер = -адаптив) */
   height: 386px;
+  position: relative;
 } 
 
 .result__video {
@@ -146,8 +144,7 @@ ol {
 }
 
 .search-form {
-  margin-right: 6px;
-  padding-top: 15px;
+  padding-top: 18px;
   display: flex;
   flex-direction: row;
   justify-content: space-between; /* распределяем элементы */
@@ -156,18 +153,34 @@ ol {
 }
 
 .search-form__label {
-  margin-left: auto;
+  margin-right: 0px;
+  margin-left: 5px;
   margin-top: 10px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: left;
   width: fit-content;
   gap: 5px;
 }
 
+
 .search-form__textfield::placeholder { /* + к знаниям */
   font-family: 'Fira Sans Condensed', sans-serif; /* + если задать в самой форме, то ее длина ломается */
   color: rgba(255, 255, 255, 0.7);
+}
+
+.search-form__textfield { 
+  padding: 0px;
+  margin: 0px;
+  appearance: none;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 18px;
+  border-style: solid none;
+  border-color: #fff;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 /* ПОФИКСИТЬ */
@@ -177,19 +190,10 @@ ol {
   border-radius: 0px; 
 }
 
-.search-form__textfield { 
-  appearance: none;
-  font-size: 18px;
-  letter-spacing: 0px;
-  line-height: 18px;
-  border-style: solid none;
-  border-color: #fff;
-  background-color: transparent;
-}
-
 .search-form__checkbox-list {
   display: flex;
   gap: 10px;
+  cursor: pointer;
 }
 
 /* Состояния чекбокса */ 
@@ -254,6 +258,7 @@ ol {
   height: 534px;    /* Жёсткая высота */
   overflow-y: auto;    /* Вертикальный скролл при переполнении */
   overflow-x: hidden;  /* Горизонтальный скролл отключён */
+  position: relative;
 }
 
 .cards-list-item-template {
@@ -266,6 +271,7 @@ ol {
 }
 
 .content__video-card-thumbnail {
+  margin-left: 0px;
   min-width: 194px; /* Минимальная ширина */
   height: 103px; /* Фиксированная высота */
   object-fit: cover; /* Обрезает избыточное пространство, сохраняя пропорции */
@@ -301,13 +307,13 @@ ol {
   line-height: 16.2px;
   display: -webkit-box;      /* Необходимо для line-clamp, если верить стаковерфлоу */
   overflow: hidden;          /* Скрываем переполняющий текст */
-  -webkit-line-clamp: 1;     /* Ограничиваем двумя строкамами для глобала*/
+  -webkit-line-clamp: 4;     /* Ограничиваем 4-мя(макет) строкамами для глобала*/
   -webkit-box-orient: vertical; /* Ориентация обрезки */
-  line-clamp: 1; 
+  line-clamp: 4; 
   white-space: nowrap;       /* То же, что и для заголовка */
   text-overflow: ellipsis;   /* Добавляем "…" при обрезке */
 } 
-/* ПОЧЕМУ ПОСЛЕ ЗАПРЕТА ПЕРЕНОСА ТЕКСТ РЕЗКО ВСТАЛ ВЕРНО */
+/* ПОСЛЕ ЗАПРЕТА ПЕРЕНОСА ТЕКСТ РЕЗКО ВСТАЛ ВЕРНО(не дышать на него) */
 
 .button {
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -317,9 +323,11 @@ ol {
   text-align: center;
   border: 1px solid #fff;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .search-form__submit-button {
+  margin-left: 0px;
   margin-top: 18px;
   width: 194px; /* В макете указано, что фиксировано, поэтому, наверное, можно? */
   height: 34px; /* Мб высоту в общий класс лучше было бы */
