@@ -53,7 +53,7 @@ ol {
 }
 
 .content {
-  padding: 133px 30px;
+  margin: auto; /* чтобы всегда по центру */
   max-width: 1140px;
   display: flex;
   flex-direction: row;
@@ -82,7 +82,7 @@ ol {
 }
 
 .content__card-link_current {
-  background-color: #1B1919;
+  background-color: #545050; /* Цвет по макету */
 }
 
 .content__card-link:active {
@@ -98,13 +98,12 @@ ol {
 }
 
 /* Показываем обводку только при фокусе с клавиатуры */
-.content__card-link:focus-visible {
-    outline: 1px solid white;
-    border-radius: 0px; 
+.content__card-link:focus-visible { 
+    outline: 1px solid white; /* Бордер линк убран*/
 }
 
 .result {
-  padding-top: 75px; /* Сверено*/
+  padding-top: 75px; /* Сверено */
   max-width: 711px;
 }
 
@@ -121,9 +120,8 @@ ol {
 }
 
 .content__details {
-  margin-left: 25px;   /* Потом сверить (когда-нибудь) */
-  width: 100%;
-  height: 534px;
+  margin-left: 25px;
+  width: 100%; /* Высота убрана */
   display: flex;
   flex-direction: column;
   gap: 16px;   /* Отступы между заголовком и блоком с карточками */
@@ -139,7 +137,7 @@ ol {
 }
 
 .content__accent {
-  color: grey;
+  color: #545050; /* Элемент по макету */
 }
 
 .search-form {
@@ -164,11 +162,12 @@ ol {
 
 
 .search-form__textfield::placeholder { /* + к знаниям */
-  font-family: 'Fira Sans Condensed', sans-serif; /* + если задать в самой форме, то ее длина ломается */
   color: rgba(255, 255, 255, 0.7);
 }
 
 .search-form__textfield { 
+  width: 225px;
+  font-family: 'Fira Sans Condensed', sans-serif; 
   padding: 0px;
   margin: 0px;
   appearance: none;
@@ -176,17 +175,11 @@ ol {
   letter-spacing: 0px;
   line-height: 18px;
   border-style: solid none;
+  border-width: 1px;
   border-color: #fff;
   color: white;
   background-color: transparent;
   cursor: pointer;
-}
-
-/* ПОФИКСИТЬ */
-.search-form:has(.search-form__input:focus-visible) { /* + факультативные шаги убивают...*/
-  outline: 1px solid white; /* Белая обводка вокруг всего лейбла */
-  outline-offset: 2px; /* Чтобы не сливалось в обводкой */
-  border-radius: 0px; 
 }
 
 .search-form__checkbox-list {
@@ -207,7 +200,7 @@ ol {
   border-radius: 0px;
 }
 
-.search-form__label:focus-visible {
+.search-form__textfield:focus-visible { /* Фикс был */
   outline: 1px solid white; /* Белая обводка вокруг всего лейбла */
   outline-offset: 1px;
   border-radius: 0px; /* Почему-то не работает */
@@ -254,7 +247,7 @@ ol {
 .content__list-container {
   margin-left: 3px;
   margin-top: 8px;
-  height: 534px;    /* Жёсткая высота */
+  height: 298px;   /* Жёсткая высота, значение обновлено */
   overflow-y: auto;    /* Вертикальный скролл при переполнении */
   overflow-x: hidden;  /* Горизонтальный скролл отключён */
   position: relative; /* Для прелоудера */
@@ -271,7 +264,7 @@ ol {
 
 .content__video-card-thumbnail {
   margin-left: 0px;
-  min-width: 194px; /* Минимальная ширина */
+  width: 194px; /* Ширина */
   height: 103px; /* Фиксированная высота */
   object-fit: cover; /* Обрезает избыточное пространство, сохраняя пропорции */
   object-position: left; /* ДУМАТЬ */
@@ -299,6 +292,7 @@ ol {
   padding-top: 3px; /* Паддинги придумал Сатана... Он не встает ровно:( */
   font-family: 'Fira Sans Condensed', sans-serif;
   align-items: flex-start; /* Прижимаем элементы к верху */
+  text-transform: none; /* Регистр починен */
   font-size: 18px;
   font-weight: 400;
   text-align: left;
@@ -333,23 +327,24 @@ ol {
   align-items: flex-start;
 }
 
-/* Реакции кнопки сабмита на действия пользователя */
-.search-form__submit-button:active { /* Настройка активного состояния кнопки */
+/* Реакции для всех кнопок на действия пользователя */
+.button:active { /* Настройка активного состояния кнопки */
   background-color: #545050;
 }
 
-.search-form__submit-button:hover {
+.button:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.search-form__submit-button:focus-visible {
+.button:focus-visible {
   outline: 1px solid white; /* Белая обводка вокруг всего лейбла */
   outline-offset: 3px;
   border-radius: 0px; 
 }
 
 .more-button {
+  margin-top: 25px;
   width: 100%;
   min-height: 34px;
 }
