@@ -253,10 +253,6 @@ ol {
   position: relative; /* Для прелоудера */
 }
 
-.cards-list-item-template {
-  gap: 30px;
-}
-
 .content__video-card {
   display: flex;
   align-items: flex-start; /* Прижимаем элементы к верху */
@@ -317,6 +313,7 @@ ol {
   border: 1px solid #fff;
   background-color: transparent;
   cursor: pointer;
+  min-height: 34px;
 }
 
 .search-form__submit-button {  /* Частный вариант для сабмит кнопки */
@@ -346,7 +343,6 @@ ol {
 .more-button {
   margin-top: 25px;
   width: 100%;
-  min-height: 34px;
 }
 
 .visually-hidden {
