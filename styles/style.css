@@ -283,7 +283,6 @@ ol {
   text-overflow: ellipsis;   /* Добавляем "…" при обрезке */
 }
 
-
 .content__video-card-description { 
   padding-top: 3px; /* Паддинги придумал Сатана... Он не встает ровно:( */
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -296,11 +295,9 @@ ol {
   line-height: 16.2px;
   display: -webkit-box;      /* Необходимо для line-clamp, если верить стаковерфлоу */
   overflow: hidden;          /* Скрываем переполняющий текст */
-  -webkit-line-clamp: 4;     /* Ограничиваем 4-мя(макет) строкамами для глобала*/
-  -webkit-box-orient: vertical; /* Ориентация обрезки */
-  line-clamp: 4; 
-  white-space: nowrap;       /* То же, что и для заголовка */
-  text-overflow: ellipsis;   /* Добавляем "…" при обрезке */
+  -webkit-line-clamp: 4;         /* Ограничиваем 4 строками */
+  -webkit-box-orient: vertical;  /* Ориентация обрезки */
+  text-overflow: ellipsis;       /* Добавляем "…" при обрезке */
 } 
 /* ПОСЛЕ ЗАПРЕТА ПЕРЕНОСА ТЕКСТ РЕЗКО ВСТАЛ ВЕРНО(не дышать на него) */
 
@@ -320,7 +317,6 @@ ol {
   margin-left: 0px;
   margin-top: 18px;
   width: 194px; /* В макете указано, что фиксировано, поэтому, наверное, можно? */
-  height: 34px; /* Мб высоту в общий класс лучше было бы */
   align-items: flex-start;
 }
 
