@@ -46,7 +46,7 @@ ol {
   display: flex;
   inline-size: 1200px;
   block-size: 100%;
-  margin: auto;
+  margin:  auto; /* чтобы всегда по центру */
   color: #fff;
   font-size: 18px;
   background-color: #1b1919;
@@ -58,6 +58,9 @@ ol {
   display: flex;
   flex-direction: row;
   text-align: center;
+  justify-content: center;  /* Центрируем по горизонтали */
+  align-items: center;      /* Центрируем по вертикали */
+  height: 100vh;        /* Растягиваем на всю высоту экрана, поэтому другие ед. изм*/
 }
 
 
@@ -150,8 +153,6 @@ ol {
 }
 
 .search-form__label {
-  margin-right: 0px;
-  margin-left: 5px;
   margin-top: 10px;
   display: flex;
   flex-direction: row;
@@ -183,8 +184,9 @@ ol {
 }
 
 .search-form__checkbox-list {
+  padding-bottom: 8px;
   display: flex;
-  gap: 10px;
+  gap: 15px;
   cursor: pointer;
 }
 
@@ -231,11 +233,13 @@ ol {
 }
 
 .search-form__fieldset {
+  max-width: 212px;
   font-family: 'Fira Sans Condensed', sans-serif;
   border: none;
 }
 
 .search-form__fieldset-title {
+  margin-right: auto;
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 0px;
@@ -243,10 +247,8 @@ ol {
   text-align: left;
 }
 
-
 .content__list-container {
   margin-left: 3px;
-  margin-top: 8px;
   height: 298px;   /* Жёсткая высота, значение обновлено */
   overflow-y: auto;    /* Вертикальный скролл при переполнении */
   overflow-x: hidden;  /* Горизонтальный скролл отключён */
@@ -267,11 +269,11 @@ ol {
 }
 
 .content__video-card-description-container {
+  max-width: 196px;
   flex-grow: 1;
 }
 
 .content__video-card-title {
-  max-width: 196px;
   text-align: left;
   letter-spacing: 0px;
   text-transform: uppercase;
@@ -299,7 +301,7 @@ ol {
   -webkit-box-orient: vertical;  /* Ориентация обрезки */
   text-overflow: ellipsis;       /* Добавляем "…" при обрезке */
 } 
-/* ПОСЛЕ ЗАПРЕТА ПЕРЕНОСА ТЕКСТ РЕЗКО ВСТАЛ ВЕРНО(не дышать на него) */
+/* перенос строк починен */
 
 .button {  /* Общий класс для кнопок */
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -337,6 +339,7 @@ ol {
 }
 
 .more-button {
+  max-width: 390px;
   margin-top: 25px;
   width: 100%;
 }
