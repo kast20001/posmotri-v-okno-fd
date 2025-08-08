@@ -54,7 +54,7 @@ ol {
 
 .content {
   margin: auto; /* чтобы всегда по центру */
-  max-width: 1140px;
+  width: 1140px;
   display: flex;
   flex-direction: row;
   text-align: center;
